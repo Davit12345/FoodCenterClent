@@ -1,28 +1,33 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Navbar from "./components/Navbar"
+import "bootstrap/dist/css/bootstrap.min.css"
+import FoodCenter from "./components/FoodCenter"
+import addFood from "./components/admin/addfood"
+import buyFood from "./components/user/seeFoods"
+import  {Provider} from "react-redux";
+import  store from "./store";
+
+import {BrowserRouter as Router, Route} from "react-router-dom";
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <Provider store={store}>
+
+            <Router>
+                <div>
+                    <Navbar/>
+                    <Route exact path="/" component={FoodCenter}/>
+                    <Route exact path="/addFood" component={addFood}/>
+                    <Route exact path="/buyFood" component={buyFood}/>
+                </div>
+            </Router>
+            </Provider>
+
+        );
+    }
 }
 
 export default App;
