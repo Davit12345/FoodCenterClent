@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar"
 import "bootstrap/dist/css/bootstrap.min.css"
 import FoodCenter from "./components/FoodCenter"
 import addFood from "./components/admin/addfood"
-import buyFood from "./components/user/seeFoods"
+import allFood from "./components/user/seeFoods"
 import  {Provider} from "react-redux";
 import  store from "./store";
 
@@ -20,8 +20,11 @@ class App extends Component {
                 <div>
                     <Navbar/>
                     <Route exact path="/" component={FoodCenter}/>
+
                     <Route exact path="/addFood" component={addFood}/>
-                    <Route exact path="/buyFood" component={buyFood}/>
+
+                    <Route exact path="/buyFood" component={allFood}/>
+
                 </div>
             </Router>
             </Provider>

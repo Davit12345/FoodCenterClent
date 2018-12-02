@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ERRORS } from "./types";
+import { GET_ERRORS, GET_PROJECT_TASKS } from "./types";
 
 export const addMenu = (menu, history) => async dispatch => {
     try {
@@ -15,4 +15,11 @@ export const addMenu = (menu, history) => async dispatch => {
             payload: error.response.data
         });
     }
+};
+export const getBacklog = () => async dispatch => {
+    const res = await axios.get("http://localhost:9494/menu");
+    dispatch({
+        type: GET_PROJECT_TASKS,
+        payload: res.data
+    });
 };

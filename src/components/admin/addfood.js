@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {addMenu} from "../../actions/projectTaskActions";
-import classnames from "classnames";
+// import classnames from "classnames";
 
 class Addfood extends Component {
 
@@ -11,7 +11,7 @@ class Addfood extends Component {
         super();
         this.state = {
             name: "",
-            menuItems: "",
+            menuItem: "",
             price: "",
             info:"",
             errors: {}
@@ -35,7 +35,7 @@ class Addfood extends Component {
         e.preventDefault();
         const newMenuTask = {
             name: this.state.name,
-            menuItems: this.state.menuItems,
+            menuItem: this.state.menuItem,
             price: this.state.price,
             info: this.state.info
         };
@@ -75,8 +75,8 @@ class Addfood extends Component {
 
                                         <div className="form-group">
                                             <select className="form-control form-control-lg"
-                                                    value={this.state.menuItems}
-                                                    onChange={this.onChange} name="menuItems"
+                                                    value={this.state.menuItem}
+                                                    onChange={this.onChange} name="menuItem"
                                                 >
                                                 <option value="">Select Items</option>
                                                 <option value="Dish">Dish</option>
