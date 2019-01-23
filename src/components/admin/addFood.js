@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {addMenu} from "../../actions/projectTaskActions";
-// import classnames from "classnames";
 
-class Addfood extends Component {
+class AddFood extends Component {
 
     constructor() {
         super();
@@ -13,7 +11,7 @@ class Addfood extends Component {
             name: "",
             menuItem: "",
             price: "",
-            info:"",
+            info: "",
             errors: {}
         };
 
@@ -40,12 +38,17 @@ class Addfood extends Component {
             info: this.state.info
         };
         // console.log(newProjectTask);
+        this.props.history.push('/admin/foodList');
         this.props.addMenu(newMenuTask, this.props.history);
     }
 
+
     render() {
         return (
+
+
             <div className="Addfood">
+
                 <div className="container">
 
                     <h1>add food page </h1>
@@ -53,9 +56,7 @@ class Addfood extends Component {
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-8 m-auto">
-                                    <Link to="/" className="btn btn-light">
-                                        Back to Board
-                                    </Link>
+
 
                                     <h4 className="display-4 text-center">
                                         Add /Update Project Task
@@ -66,8 +67,8 @@ class Addfood extends Component {
                                         <div className="form-group">
 
                                             <input type="text" className="form-control form-control-lg"
-                                                value={this.state.name}
-                                                onChange={this.onChange}
+                                                   value={this.state.name}
+                                                   onChange={this.onChange}
                                                    name="name"
                                                    placeholder="Food name"
                                             />
@@ -77,7 +78,7 @@ class Addfood extends Component {
                                             <select className="form-control form-control-lg"
                                                     value={this.state.menuItem}
                                                     onChange={this.onChange} name="menuItem"
-                                                >
+                                            >
                                                 <option value="">Select Items</option>
                                                 <option value="Dish">Dish</option>
                                                 <option value="Drinks">Drinks</option>
@@ -90,8 +91,8 @@ class Addfood extends Component {
 
                                         <div className="form-group">
                                             <input type="number" className="form-control form-control-lg"
-                                                value={this.state.price}
-                                                onChange={this.onChange}
+                                                   value={this.state.price}
+                                                   onChange={this.onChange}
                                                    name="price"
                                                    placeholder="Food price"
                                             />
@@ -99,10 +100,10 @@ class Addfood extends Component {
 
                                         <div className="form-group">
                                     <textarea className="form-control form-control-lg"
-                                        value={this.state.info}
-                                        onChange={this.onChange}
+                                              value={this.state.info}
+                                              onChange={this.onChange}
                                               placeholder="Info about Food "
-                                              name="info"></textarea>
+                                              name="info"/>
 
 
                                         </div>
@@ -120,7 +121,8 @@ class Addfood extends Component {
         );
     }
 }
-Addfood.propTypes = {
+
+AddFood.propTypes = {
     addMenu: PropTypes.func.isRequired,
     errors: PropTypes.object.isRequired
 };
@@ -132,4 +134,4 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
     {addMenu}
-)(Addfood);
+)(AddFood);

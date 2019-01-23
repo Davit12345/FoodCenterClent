@@ -1,33 +1,49 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Navbar from "./components/Navbar"
 import "bootstrap/dist/css/bootstrap.min.css"
-import FoodCenter from "./components/FoodCenter"
-import addFood from "./components/admin/addfood"
-import allFood from "./components/user/seeFoods"
-import  {Provider} from "react-redux";
-import  store from "./store";
-
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import adminStore from "./components/admin/adminStore"
+import service from "./components/user/service"
+import home from "./components/home"
+import foodlist from './components/admin/foodList'
+import createFood from './components/admin/addFood'
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+import signUp from '../src/components/login/signup'
+import Navbar from './components/layout/Navbar'
+import verify from './components/login/verify'
+import signin from "./components/login/signin";
+import choose from './components/user/ProjectTask/Choose'
 
 class App extends Component {
     render() {
         return (
-            <Provider store={store}>
 
-            <Router>
-                <div>
+            <BrowserRouter>
+
+                <div className="App">
                     <Navbar/>
-                    <Route exact path="/" component={FoodCenter}/>
+                    <Switch>
 
-                    <Route exact path="/addFood" component={addFood}/>
+                        <div className='component'>
+                            <Route exact path="/admin" component={adminStore}/>
 
-                    <Route exact path="/buyFood" component={allFood}/>
+                            <Route exact path="/admin/foodList" component={foodlist}/>
+                            <Route exact path="/admin/addFood" component={createFood}/>
 
+                            <Route exact path="/service" component={service}/>
+                            <Route exact path="/choose" component={choose}/>
+
+                            <Route exact path="/" component={home}/>
+
+
+                            <Route exact path="/signUp" component={signUp}/>
+
+                            <Route exact path="/verify" component={verify}/>
+
+                            <Route exact path="/signIn" component={signin}/>
+                        </div>
+                    </Switch>
                 </div>
-            </Router>
-            </Provider>
+            </BrowserRouter>
 
         );
     }

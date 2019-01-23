@@ -1,0 +1,24 @@
+.header {
+
+    /*height: 600px;*/
+    /*width: 100%;*/
+    /*background: indianred;*/
+}
+.carousel-inner img {
+    width: 100%;
+    height: 500px;
+}
+
+.content {
+    padding: 50px;
+    width: 100%;
+background: #fcffba;
+}
+
+.footer {
+    width: 100%;
+    height: 300px;
+    background: darkgray;
+    padding: 50px;
+
+}

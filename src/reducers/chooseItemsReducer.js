@@ -1,15 +1,16 @@
-import { GET_PROJECT_TASKS} from "../actions/types";
+import { GET_CHOOSE} from "../actions/types";
 
 const initialState = {
-    project_tasks: [],
+
+    choose:[]
 };
 
 export default function(state = initialState, action) {
     switch (action.type) {
-        case GET_PROJECT_TASKS:
+        case GET_CHOOSE:
             return {
                 ...state,
-                project_tasks: action.payload
+                choose: action.payload
             };
 
         default:
