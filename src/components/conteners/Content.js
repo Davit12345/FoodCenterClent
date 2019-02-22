@@ -30,7 +30,7 @@ class Content extends Component {
                                     <p className="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor
                                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                                    <a className="btn btn-primary btn-sm">Learn more</a>
+                                    <a href="/" className="btn btn-primary btn-sm">Learn more</a>
                                 </div>
 
                             </div>
@@ -50,7 +50,7 @@ class Content extends Component {
                                     <p className="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor
                                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                                    <a className="btn btn-primary btn-sm">Learn more</a>
+                                    <a href="/" className="btn btn-primary btn-sm">Learn more</a>
                                 </div>
 
                             </div>
@@ -70,7 +70,7 @@ class Content extends Component {
                                     <p className="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor
                                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                                    <a className="btn btn-primary btn-sm">Learn more</a>
+                                    <a href="/" className="btn btn-primary btn-sm">Learn more</a>
                                 </div>
 
                             </div>
@@ -97,8 +97,8 @@ class Content extends Component {
                             <div className="single-news mb-lg-0 mb-4">
 
                                 <div className="view overlay rounded z-depth-1-half mb-4">
-                                    <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Slides/1.jpg"
-                                         alt="Sample image"/>
+                                    <img alt='tex5' src="https://mdbootstrap.com/img/Photos/Slides/1.jpg"
+                                        />
                                         <a>
                                             <div className="mask rgba-white-slight"></div>
                                         </a>
@@ -137,8 +137,8 @@ class Content extends Component {
                                         <div className="view overlay rounded z-depth-1 mb-4">
                                             <img className="img-fluid"
                                                  src="https://mdbootstrap.com/img/Photos/Others/img%20(29).jpg"
-                                                 alt="Sample image"/>
-                                                <a>
+                                                />
+                                                <a href="/">
                                                     <div className="mask rgba-white-slight"></div>
                                                 </a>
                                         </div>
@@ -163,116 +163,118 @@ class Content extends Component {
 
                             </div>
 
-                            <div className="single-news mb-4">
+                            {/*<div className="single-news mb-4">*/}
 
-                                <div className="row">
+                                {/*<div className="row">*/}
 
-                                    <div className="col-md-3">
+                                    {/*<div className="col-md-3">*/}
 
-                                        <div className="view overlay rounded z-depth-1 mb-4">
-                                            <img className="img-fluid"
-                                                 src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg"
-                                                 alt="Sample image"/>
-                                                <a>
-                                                    <div className="mask rgba-white-slight"></div>
-                                                </a>
-                                        </div>
+                                        {/*<div className="view overlay rounded z-depth-1 mb-4">*/}
+                                            {/*<img alt='tex4'*/}
+                                                 {/*src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg"*/}
+                                                 {/*/>*/}
+                                                {/*<a href="/">*/}
+                                                    {/*<div className="mask rgba-white-slight"></div>*/}
+                                                {/*</a>*/}
+                                        {/*</div>*/}
 
-                                    </div>
+                                    {/*</div>*/}
 
-                                    <div className="col-md-9">
+                                    {/*<div className="col-md-9">*/}
 
-                                        <p className="font-weight-bold dark-grey-text">25/02/2018</p>
-                                        <div className="d-flex justify-content-between">
-                                            <div className="col-11 text-truncate pl-0 mb-3">
-                                                <a href="#!" className="dark-grey-text">Itaque earum rerum hic tenetur a
-                                                    sapiente delectus</a>
-                                            </div>
-                                            <a><i className="fas fa-angle-double-right"></i></a>
-                                        </div>
+                                        {/*<p className="font-weight-bold dark-grey-text">25/02/2018</p>*/}
+                                        {/*<div className="d-flex justify-content-between">*/}
+                                            {/*<div className="col-11 text-truncate pl-0 mb-3">*/}
+                                                {/*<a href="#!" className="dark-grey-text">Itaque earum rerum hic tenetur a*/}
+                                                    {/*sapiente delectus</a>*/}
+                                            {/*</div>*/}
+                                            {/*<a href="/"><i className="fas fa-angle-double-right"></i></a>*/}
+                                        {/*</div>*/}
 
-                                    </div>
+                                    {/*</div>*/}
 
-                                </div>
+                                {/*</div>*/}
 
-                            </div>
+                            {/*</div>*/}
 
-                            <div className="single-news mb-4">
+                            {/*<div className="single-news mb-4">*/}
 
-                                <div className="row">
+                                {/*<div className="row">*/}
 
-                                    <div className="col-md-3">
+                                    {/*<div className="col-md-3">*/}
 
-                                        <div className="view overlay rounded z-depth-1 mb-4">
-                                            <img className="img-fluid"
-                                                 src="https://mdbootstrap.com/img/Photos/Others/images/87.jpg"
-                                                 alt="Sample image"/>
-                                                <a>
-                                                    <div className="mask rgba-white-slight"></div>
-                                                </a>
-                                        </div>
+                                        {/*<div className="view overlay rounded z-depth-1 mb-4">*/}
+                                            {/*<img alt='tex'*/}
+                                                 {/*src="https://mdbootstrap.com/img/Photos/Others/images/87.jpg"*/}
+                                                 {/*/>*/}
+                                                {/*<a href="/">*/}
+                                                    {/*<div className="mask rgba-white-slight"></div>*/}
+                                                {/*</a>*/}
+                                        {/*</div>*/}
 
-                                    </div>
+                                    {/*</div>*/}
 
-                                    <div className="col-md-9">
+                                    {/*<div className="col-md-9">*/}
 
-                                        <p className="font-weight-bold dark-grey-text">24/02/2018</p>
-                                        <div className="d-flex justify-content-between">
-                                            <div className="col-11 text-truncate pl-0 mb-3">
-                                                <a href="#!" className="dark-grey-text">Soluta nobis est eligendi optio
-                                                    cumque nihil impedit quo
-                                                    minus</a>
-                                            </div>
-                                            <a><i className="fas fa-angle-double-right"></i></a>
-                                        </div>
+                                        {/*<p className="font-weight-bold dark-grey-text">24/02/2018</p>*/}
+                                        {/*<div className="d-flex justify-content-between">*/}
+                                            {/*<div className="col-11 text-truncate pl-0 mb-3">*/}
+                                                {/*<a href="#!" className="dark-grey-text">Soluta nobis est eligendi optio*/}
+                                                    {/*cumque nihil impedit quo*/}
+                                                    {/*minus</a>*/}
+                                            {/*</div>*/}
+                                            {/*<a href="/"><i className="fas fa-angle-double-right"></i></a>*/}
+                                        {/*</div>*/}
 
-                                    </div>
+                                    {/*</div>*/}
 
-                                </div>
+                                {/*</div>*/}
 
-                            </div>
+                            {/*</div>*/}
 
-                            <div className="single-news">
+                            {/*<div className="single-news">*/}
 
-                                <div className="row">
+                                {/*<div className="row">*/}
 
-                                    <div className="col-md-3">
+                                    {/*<div className="col-md-3">*/}
 
-                                        <div className="view overlay rounded z-depth-1 mb-md-0 mb-4">
-                                            <img className="img-fluid"
-                                                 src="https://mdbootstrap.com/img/Photos/Others/img%20(27).jpg"
-                                                 alt="Sample image"/>
-                                                <a>
-                                                    <div className="mask rgba-white-slight"></div>
-                                                </a>
-                                        </div>
+                                        {/*<div className="view overlay rounded z-depth-1 mb-md-0 mb-4">*/}
+                                            {/*<img  alt='tex2'*/}
+                                                 {/*src="https://mdbootstrap.com/img/Photos/Others/img%20(27).jpg"*/}
+                                                {/*/>*/}
+                                                {/*<a href="/">*/}
+                                                    {/*<div className="mask rgba-white-slight"></div>*/}
+                                                {/*</a>*/}
+                                        {/*</div>*/}
 
-                                    </div>
+                                    {/*</div>*/}
 
-                                    <div className="col-md-9">
+                                    {/*<div className="col-md-9">*/}
 
-                                        <p className="font-weight-bold dark-grey-text">23/02/2018</p>
-                                        <div className="d-flex justify-content-between">
-                                            <div className="col-11 text-truncate pl-0 mb-lg-3">
-                                                <a href="#!" className="dark-grey-text">Duis aute irure dolor in
-                                                    reprehenderit in voluptate</a>
-                                            </div>
-                                            <a><i className="fas fa-angle-double-right"></i></a>
-                                        </div>
+                                        {/*<p className="font-weight-bold dark-grey-text">23/02/2018</p>*/}
+                                        {/*<div className="d-flex justify-content-between">*/}
+                                            {/*<div className="col-11 text-truncate pl-0 mb-lg-3">*/}
+                                                {/*<a href="/" className="dark-grey-text">Duis aute irure dolor in*/}
+                                                    {/*reprehenderit in voluptate</a>*/}
+                                            {/*</div>*/}
+                                            {/*<a href="/"><i className="fas fa-angle-double-right"></i></a>*/}
+                                        {/*</div>*/}
 
-                                    </div>
+                                    {/*</div>*/}
 
-                                </div>
+                                {/*</div>*/}
 
-                            </div>
+                            {/*</div>*/}
 
+                        {/*</div>*/}
+
+                    {/*</div>*/}
                         </div>
-
                     </div>
-
                 </section>
-
             </div>
+
+
 
         );
     }

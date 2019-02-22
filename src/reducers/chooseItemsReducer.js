@@ -1,4 +1,4 @@
-import { GET_CHOOSE} from "../actions/types";
+import { GET_CHOOSE,DELETE_ONE_TASK,SUCCESS_BUY_PRODUCT} from "../actions/types";
 
 const initialState = {
 
@@ -12,7 +12,19 @@ export default function(state = initialState, action) {
                 ...state,
                 choose: action.payload
             };
+        case DELETE_ONE_TASK:
+            return {
+                ...state,
+                choose: state.choose.filter(
+                    choose => choose.id !== action.payload
+                )
+            };
+        case SUCCESS_BUY_PRODUCT:
+            return {
+                ...state,
+                choose:[]
 
+            };
         default:
             return state;
 

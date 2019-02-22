@@ -1,36 +1,89 @@
 import React, {Component} from 'react';
 import {NavLink} from "react-router-dom";
-// import  {connect} from  'react-redux'
-// import { signOut } from '../../actions/authActions'
+import  {connect} from  'react-redux'
+import { signOut } from '../../actions/authActions'
+import PropTypes from "prop-types";
+import Cookies from 'universal-cookie'
 
 class SingnedInLists extends Component {
+    signOut(e){
+        e.preventDefault();
+
+        this.props.signOut();
+
+    }
+
+
     render() {
-        return (
-            <ul className="nav " >
+        const cookies = new Cookies();
+        var role_type = cookies.get('role');
+        if (role_type === "ROLE_ADMIN") {
 
-              <li className="nav-item">
-                  <NavLink className="nav-link" to="/service">Service</NavLink>
-              </li>
+            return (
+                <ul className="nav ">
 
-              <li className="nav-item">
-                  <NavLink className="nav-link" to="/admin">admin</NavLink>
-              </li>
-                <li className="nav-item">
-                    <NavLink className="nav-link" to="/choose">choose</NavLink>
-                </li>
-              {/*<li className="nav-item">*/}
-                 {/*<NavLink onClick={this.signOut} >Log Out</NavLink>*/}
-              {/*</li>*/}
-          </ul>
-        );
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/service">Service</NavLink>
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/admin">admin</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/manager">manager</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/choose">choose</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink to="/" onClick={this.signOut.bind(this)}>Log Out</NavLink>
+                    </li>
+                </ul>
+            )
+        } else if (role_type === "MANAGER") {
+            return (
+                <ul className="nav ">
+
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/service">Service</NavLink>
+                    </li>
+
+
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/manager">manager</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/choose">choose</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink to="/" onClick={this.signOut.bind(this)}>Log Out</NavLink>
+                    </li>
+                </ul>
+            )
+        } else if (role_type === "ROLE_USER") {
+            return (
+
+
+                <ul className="nav ">
+
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/service">Service</NavLink>
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/choose">choose</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink to="/" onClick={this.signOut.bind(this)}>Log Out</NavLink>
+                    </li>
+                </ul>
+            );
+        }
     }
 }
+SingnedInLists.propTypes = {
+    signOut: PropTypes.func.isRequired
+};
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         signOut: () => dispatch(signOut())
-//     }
-// }
 
-// export default connect(null, mapDispatchToProps)(SingnedInLists)
-export default  SingnedInLists;
+export default connect(null, {signOut})(SingnedInLists)

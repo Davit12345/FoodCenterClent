@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
-import {getBacklog} from "../../actions/projectTaskActions";
+import {getAllProducts} from "../../actions/projectTaskActions";
 import FoodItem from './items/foodItem'
 import {Link} from "react-router-dom";
 
 class FoodList extends Component {
     componentDidMount() {
-        this.props.getBacklog();
+        this.props.getAllProducts();
     }
 
     render() {
@@ -15,7 +15,6 @@ class FoodList extends Component {
         const {project_tasks} = this.props.project_tasks;
 
 
-        // const BoardAlgorithm = project_tasks => {
         if (project_tasks.length < 1) {
             return (
                 <div className="alert alert-info text-center" role="alert">
@@ -39,6 +38,7 @@ class FoodList extends Component {
                             <th>Item</th>
                             <th>Price</th>
                             <th>Info</th>
+
                         </tr>
                         </thead>
                         <tbody>
@@ -59,7 +59,7 @@ class FoodList extends Component {
 }
 
 FoodList.propTypes = {
-    getBacklog: PropTypes.func.isRequired,
+    getAllProducts: PropTypes.func.isRequired,
     project_tasks: PropTypes.object.isRequired
 };
 
@@ -69,5 +69,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    {getBacklog}
+    {getAllProducts}
 )(FoodList);

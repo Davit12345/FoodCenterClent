@@ -1,14 +1,22 @@
 import React, {Component} from 'react';
-import ProjectTaskItem from "./ProjectTask/foodTaskItem"
+import ProjectTaskItem from "./items/foodTaskItem"
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
-import {getBacklog} from "../../actions/projectTaskActions";
+import {getAllProducts} from "../../actions/projectTaskActions";
 // import InfiniteCarousel from 'react-leaf-carousel';
-import Item from './ProjectTask/DivItem'
+import Cookies from 'universal-cookie'
+import './style.css'
+import Item from './items/ScrollItem'
 
 class Service extends Component {
     componentDidMount() {
-        this.props.getBacklog();
+        const cookies = new Cookies();
+        if (cookies.get('token') == null) {
+            this.props.history.push('/signIn')
+        }
+
+        this.props.getAllProducts();
+
     }
 
     render() {
@@ -22,7 +30,6 @@ class Service extends Component {
         let Deserts = [];
         let Other = [];
 
-        // const BoardAlgorithm = project_tasks => {
         if (project_tasks.length < 1) {
             return (
                 <div className="alert alert-info text-center" role="alert">
@@ -45,7 +52,8 @@ class Service extends Component {
 
                 if (tasks[i].props.project_task.menuItem === "Salad") {
                     Salad.push(tasks[i]);
-                }  if (tasks[i].props.project_task.menuItem === "Sweets") {
+                }
+                if (tasks[i].props.project_task.menuItem === "Sweets") {
                     Sweets.push(tasks[i]);
                 }
 
@@ -60,14 +68,34 @@ class Service extends Component {
 
             return (
                 <div className='first'>
+                    <div id="Item">
+                        <h3> Drinks</h3>
+                        <Item item={Dish}/>
+                    </div>
 
-                    <Item item={Dish}/>
-                    <Item item={Drinks}/>
-                    <Item item={Salad}/>
-                    <Item item={Sweets}/>
-                    <Item item={Deserts}/>
-                    <Item item={Other}/>
+                    <div id="Item">
+                        <h3> Drinks</h3>
+                        <Item item={Drinks}/>
+                    </div>
+                    <div id="Item">
+                        <h3> Salad</h3>
+                        <Item item={Salad}/>
+                    </div>
 
+                    <div id="Item">
+                        <h3> Sweets</h3>
+                        <Item item={Sweets}/>
+                    </div>
+
+                    <div id="Item">
+                        <h3> Deserts</h3>
+                        <Item item={Deserts}/>
+                    </div>
+
+                    <div id="Item">
+                        <h3> Other</h3>
+                        <Item item={Other}/>
+                    </div>
                 </div>
 
 
@@ -79,15 +107,16 @@ class Service extends Component {
 }
 
 Service.propTypes = {
-    getBacklog: PropTypes.func.isRequired,
-    project_tasks: PropTypes.object.isRequired
+    getAllProducts: PropTypes.func.isRequired,
+    project_tasks: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
-    project_tasks: state.project_task
+    project_tasks: state.project_task,
+    auth: state.auth
 });
 
 export default connect(
     mapStateToProps,
-    {getBacklog}
+    {getAllProducts}
 )(Service);

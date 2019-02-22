@@ -37,7 +37,6 @@ class AddFood extends Component {
             price: this.state.price,
             info: this.state.info
         };
-        // console.log(newProjectTask);
         this.props.history.push('/admin/foodList');
         this.props.addMenu(newMenuTask, this.props.history);
     }

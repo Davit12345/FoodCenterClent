@@ -11,8 +11,8 @@ import signUp from '../src/components/login/signup'
 import Navbar from './components/layout/Navbar'
 import verify from './components/login/verify'
 import signin from "./components/login/signin";
-import choose from './components/user/ProjectTask/Choose'
-
+import choose from './components/user/Choose'
+import  manager from './components/manager/ManagerStore'
 class App extends Component {
     render() {
         return (
@@ -23,7 +23,7 @@ class App extends Component {
                     <Navbar/>
                     <Switch>
 
-                        <div className='component'>
+                        {/*<div className='component'>*/}
                             <Route exact path="/admin" component={adminStore}/>
 
                             <Route exact path="/admin/foodList" component={foodlist}/>
@@ -33,14 +33,14 @@ class App extends Component {
                             <Route exact path="/choose" component={choose}/>
 
                             <Route exact path="/" component={home}/>
-
+                        <Route exact path="/manager" component={manager}/>
 
                             <Route exact path="/signUp" component={signUp}/>
 
                             <Route exact path="/verify" component={verify}/>
 
                             <Route exact path="/signIn" component={signin}/>
-                        </div>
+                        {/*</div>*/}
                     </Switch>
                 </div>
             </BrowserRouter>

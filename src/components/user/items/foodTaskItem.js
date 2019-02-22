@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import  {addItem} from '../../../actions/projectTaskActions'
-
+import ice from '../../../style/img/ice.jpg'
   class FoodTaskItem extends Component {
 
 
@@ -18,6 +18,7 @@ import  {addItem} from '../../../actions/projectTaskActions'
           this.onSubmit = this.onSubmit.bind(this);
       }
 
+
       componentWillReceiveProps(nextProps) {
           if (nextProps.errors) {
               this.setState({errors: nextProps.errors});
@@ -30,13 +31,14 @@ import  {addItem} from '../../../actions/projectTaskActions'
 
       onSubmit(e) {
           e.preventDefault();
-          const item = {
-              name: this.props.project_task.name,
-              quantity: this.state.quantity,
 
-          };
+              const item = {
+                  name: this.props.project_task.name,
+                  quantity: this.state.quantity,
 
-          this.props.addItem(item, this.props.history,this.props.auth);
+              };
+
+              this.props.addItem(item, this.props.history);
 
       }
 
@@ -47,7 +49,7 @@ import  {addItem} from '../../../actions/projectTaskActions'
 
         return (
             <div className="card mb-1 bg-light">
-                <img  src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(79).jpg"
+                <img  src={ice}
                      className="img-fluid" alt=""/>
                 <form  onSubmit={this.onSubmit}>
 

@@ -1,21 +1,29 @@
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
-import FoodItem from "./ChooseItem";
+import FoodItem from "./items/ChooseItem";
 import {connect} from "react-redux";
-import {getChoose} from "../../../actions/projectTaskActions";
+import {getChoose, buyProduct} from "../../actions/projectTaskActions";
 import PropTypes from "prop-types";
-
-
+import Cookies from 'universal-cookie'
 class Choose extends Component {
 
+
     componentDidMount() {
+        const cookies = new Cookies();
+        if ( cookies.get('token') === null) {
+            this.props.history.push('/signIn')
+        }
         this.props.getChoose(this.props.auth);
     }
 
+
+
+    onBuyClick(e) {
+        e.preventDefault();
+        this.props.buyProduct(this.props.auth);
+    }
     render() {
         const {choose} = this.props.choose;
 
-console.log(choose.length)
         if (choose.length < 1) {
             return (
                 <div className="alert alert-info text-center" role="alert">
@@ -23,12 +31,10 @@ console.log(choose.length)
                 </div>
             );
 
-         }
-
-            else {
-                var commonPrice=0;
+        } else {
+            var commonPrice = 0;
             choose.map(choose => (
-                commonPrice+=choose.quantity*choose.menu.price
+                commonPrice += choose.quantity * choose.menu.price
             ))
 
             const tasks = choose.map(choose => (
@@ -47,36 +53,37 @@ console.log(choose.length)
                             <th>quantity</th>
                             <th>name</th>
                             <th>Price</th>
+                            <th>Delete</th>
                         </tr>
                         </thead>
                         <tbody>
                         {tasks}
                         </tbody>
-                        <h3> common price {commonPrice}</h3>
                     </table>
+                    <h3> common price {commonPrice}</h3>
+                    {/*<button onClick={this.onBuyClick} className="btn btn-danger">buy</button>*/}
+                    <button onClick={this.onBuyClick.bind(this)} className="btn btn-danger">buy</button>
 
-                    <Link to="/admin/addFood" className="btn btn-primary mb-3">
-                        <i className="fas fa-plus-circle">Buy</i>
-                    </Link>
+
                 </div>
-
             );
         }
     }
 }
 
-    Choose.propTypes = {
-        getChoose: PropTypes.func.isRequired,
-       // choose: PropTypes.object.isRequired,
-        auth:PropTypes.object.isRequired
+Choose.propTypes = {
+    getChoose: PropTypes.func.isRequired,
+    buyProduct: PropTypes.func.isRequired
+    , auth: PropTypes.object.isRequired
+
 };
 
-    const mapStateToProps = state => ({
+const mapStateToProps = state => ({
     choose: state.choose,
-        auth: state.auth
+    auth: state.auth
 });
 
-    export default connect(
+export default connect(
     mapStateToProps,
-    {getChoose}
-) (Choose);
+    {buyProduct, getChoose}
+)(Choose);

@@ -10,6 +10,7 @@
     "react": "^16.5.2",
     "react-animated-slider": "^1.1.4",
     "react-bootstrap": "^0.32.4",
+    "react-cookie": "^3.0.8",
     "react-dom": "^16.5.2",
     "react-leaf-carousel": "^1.2.2",
     "react-redux": "^5.1.0",

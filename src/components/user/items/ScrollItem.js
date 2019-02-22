@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import InfiniteCarousel from 'react-leaf-carousel';
+import { connect } from "react-redux";
 
-class DivItem extends Component {
+class ScrollItem extends Component {
+
     render() {
 
         return (
 
-            <div>
+
                 <InfiniteCarousel
                     breakpoints={[
                         {
@@ -32,11 +34,17 @@ class DivItem extends Component {
                     slidesToShow={4}
                     scrollOnDevice={true}
                 >
+
                     {this.props.item}
+
+
                 </InfiniteCarousel>
-            </div>
+
         );
     }
 }
 
-export default DivItem;
+export default connect(
+    null,
+
+)(ScrollItem);

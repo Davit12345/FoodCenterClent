@@ -35,7 +35,6 @@ class Verify extends Component {
             code: this.state.code,
 
         };
-        console.log(CodeAndEmail);
         this.props.history.push('/');
         this.props.VerifyWhitEmailCode(CodeAndEmail, this.props.history);
     }
