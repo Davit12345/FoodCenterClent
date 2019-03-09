@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import ProjectTaskItem from "./items/foodTaskItem"
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
-import {getAllProducts} from "../../actions/projectTaskActions";
+import {getAllProducts} from "../../actions/ProductsActions";
 // import InfiniteCarousel from 'react-leaf-carousel';
 import Cookies from 'universal-cookie'
-import './style.css'
+import  './style.css'
 import Item from './items/ScrollItem'
 
 class Service extends Component {
@@ -67,9 +67,10 @@ class Service extends Component {
             }
 
             return (
+                <div  clssName="product" style={{ marginLeft:'10%',width: '80%',textAlign: 'center'}} >
                 <div className='first'>
                     <div id="Item">
-                        <h3> Drinks</h3>
+                        <h3> Dish</h3>
                         <Item item={Dish}/>
                     </div>
 
@@ -77,7 +78,7 @@ class Service extends Component {
                         <h3> Drinks</h3>
                         <Item item={Drinks}/>
                     </div>
-                    <div id="Item">
+                    <div  id="Item">
                         <h3> Salad</h3>
                         <Item item={Salad}/>
                     </div>
@@ -98,6 +99,7 @@ class Service extends Component {
                     </div>
                 </div>
 
+                </div>
 
             );
         }
@@ -105,6 +107,7 @@ class Service extends Component {
 
     }
 }
+
 
 Service.propTypes = {
     getAllProducts: PropTypes.func.isRequired,

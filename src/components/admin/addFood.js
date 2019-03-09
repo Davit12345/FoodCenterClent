@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {addMenu} from "../../actions/projectTaskActions";
+import {addMenu} from "../../actions/ProductsActions";
 
 class AddFood extends Component {
 
@@ -12,6 +12,7 @@ class AddFood extends Component {
             menuItem: "",
             price: "",
             info: "",
+            imgURL:"",
             errors: {}
         };
 
@@ -35,10 +36,11 @@ class AddFood extends Component {
             name: this.state.name,
             menuItem: this.state.menuItem,
             price: this.state.price,
-            info: this.state.info
+            info: this.state.info,
+            imageUrl:this.state.imageUrl,
         };
         this.props.history.push('/admin/foodList');
-        this.props.addMenu(newMenuTask, this.props.history);
+        this.props.addMenu(newMenuTask);
     }
 
 
@@ -98,6 +100,17 @@ class AddFood extends Component {
                                         </div>
 
                                         <div className="form-group">
+                                            <input type="text" className="form-control form-control-lg"
+                                                   value={this.state.imageUrl}
+                                                   onChange={this.onChange}
+                                                   name="imageUrl"
+                                                   placeholder="image URL"
+                                            />
+                                        </div>
+
+                                        <div className="form-group">
+
+
                                     <textarea className="form-control form-control-lg"
                                               value={this.state.info}
                                               onChange={this.onChange}

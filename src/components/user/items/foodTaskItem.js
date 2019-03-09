@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import  {addItem} from '../../../actions/projectTaskActions'
-import ice from '../../../style/img/ice.jpg'
+import  {addItem} from '../../../actions/ProductsActions'
   class FoodTaskItem extends Component {
 
 
@@ -45,23 +44,21 @@ import ice from '../../../style/img/ice.jpg'
 
     render() {
 
-        const { project_task } = this.props;
+        const { project_task: product } = this.props;
 
         return (
             <div className="card mb-1 bg-light">
-                <img  src={ice}
+                <img  src={product.imageUrl}
                      className="img-fluid" alt=""/>
                 <form  onSubmit={this.onSubmit}>
 
                 <div className="card-body bg-light">
-                    <h5 className="card-title">{project_task.name}</h5>
+                    <h5 className="card-title">{product.name}</h5>
+
 
 
                     <p className="card-text text-truncate ">
-                        {project_task.menuItem}
-                    </p>
-                    <p className="card-text text-truncate ">
-                       price is  {project_task.price} $
+                       price is  {product.price} $
                     </p>
                     <div className="form-group">
 

@@ -6,7 +6,7 @@ class SingnedOutLists extends Component {
         return (
             <ul className="nav justify-content-end" >
               <li className="nav-item">
-                  <NavLink className="nav-link" to="/signIn">signIn</NavLink>
+                  <NavLink className="nav-link" to="/signIn">SignIn</NavLink>
               </li>
               <li className="nav-item">
                   <NavLink className="nav-link" to="/signUp">signUp</NavLink>

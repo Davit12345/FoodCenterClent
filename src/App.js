@@ -12,7 +12,8 @@ import Navbar from './components/layout/Navbar'
 import verify from './components/login/verify'
 import signin from "./components/login/signin";
 import choose from './components/user/Choose'
-import  manager from './components/manager/ManagerStore'
+import manager from './components/manager/ManagerStore'
+import  TableOrHome from './components/user/TableOrHome'
 class App extends Component {
     render() {
         return (
@@ -24,22 +25,24 @@ class App extends Component {
                     <Switch>
 
                         {/*<div className='component'>*/}
-                            <Route exact path="/admin" component={adminStore}/>
+                        <Route exact path="/admin" component={adminStore}/>
 
-                            <Route exact path="/admin/foodList" component={foodlist}/>
-                            <Route exact path="/admin/addFood" component={createFood}/>
+                        <Route exact path="/admin/foodList" component={foodlist}/>
+                        <Route exact path="/admin/addFood" component={createFood}/>
 
-                            <Route exact path="/service" component={service}/>
-                            <Route exact path="/choose" component={choose}/>
+                        <Route exact path="/service" component={service}/>
+                        <Route exact path="/choose" component={choose}/>
 
-                            <Route exact path="/" component={home}/>
+                        <Route exact path="/" component={home}/>
                         <Route exact path="/manager" component={manager}/>
 
-                            <Route exact path="/signUp" component={signUp}/>
+                        <Route exact path="/signUp" component={signUp}/>
 
-                            <Route exact path="/verify" component={verify}/>
+                        <Route exact path="/verify" component={verify}/>
 
-                            <Route exact path="/signIn" component={signin}/>
+                        <Route exact path="/signIn" component={signin}/>
+
+                        <Route exact path="/haveTableOrHome" component={TableOrHome}/>
                         {/*</div>*/}
                     </Switch>
                 </div>

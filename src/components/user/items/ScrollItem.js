@@ -33,6 +33,7 @@ class ScrollItem extends Component {
                     slidesToScroll={4}
                     slidesToShow={4}
                     scrollOnDevice={true}
+
                 >
 
                     {this.props.item}

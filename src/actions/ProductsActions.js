@@ -11,21 +11,7 @@ import {
 } from "./types";
 
 
-export const addMenu = (menu, history) => async dispatch => {
-    try {
-        await axios.post("http://localhost:9494/menu", menu);
 
-        dispatch({
-            type: GET_ERRORS,
-            payload: {}
-        });
-    } catch (error) {
-        dispatch({
-            type: GET_ERRORS,
-            payload: error.response.data
-        });
-    }
-};
 
 export const getAllProducts = () => async dispatch => {
     const res = await axios.get("http://localhost:9494/menu");
@@ -48,7 +34,45 @@ function foHeaders() {
     return headers;
 }
 
-export const getChoose = (auth) => async dispatch => {
+export const addAddress = (address) => async dispatch => {
+
+
+    try {
+        await axios.post("http://localhost:9494/addAddress", address, {"headers": foHeaders()});
+
+        dispatch({
+            type: GET_ERRORS,
+            payload: {}
+        });
+    } catch (error) {
+        dispatch({
+            type: GET_ERRORS,
+            payload: error.response.data
+        });
+    }
+
+};
+export const addTable = (table) => async dispatch => {
+
+
+    try {
+        await axios.post("http://localhost:9494/addTable", table, {"headers": foHeaders()});
+
+        dispatch({
+            type: GET_ERRORS,
+            payload: {}
+        });
+    } catch (error) {
+        dispatch({
+            type: GET_ERRORS,
+            payload: error.response.data
+        });
+    }
+
+};
+
+
+export const getChoose = () => async dispatch => {
 
 
     const res = await axios.get("http://localhost:9494/choose", {"headers": foHeaders()});
@@ -61,9 +85,23 @@ export const getChoose = (auth) => async dispatch => {
     });
 
 };
+export const addMenu = (menu) => async dispatch => {
+    try {
+        await axios.post("http://localhost:9494/menu", menu,{"headers": foHeaders()});
 
+        dispatch({
+            type: GET_ERRORS,
+            payload: {}
+        });
+    } catch (error) {
+        dispatch({
+            type: GET_ERRORS,
+            payload: error.response.data
+        });
+    }
+};
 
-export const addItem = (item, history) => async dispatch => {
+export const addItem = (item) => async dispatch => {
 
 
     try {
@@ -82,7 +120,7 @@ export const addItem = (item, history) => async dispatch => {
 
 };
 
-export const deleteOneTask = (id, auth) => async dispatch => {
+export const deleteOneTask = (id) => async dispatch => {
 
 
     await axios.delete(`http://localhost:9494/choose/${id}`, {"headers": foHeaders()});
@@ -94,7 +132,7 @@ export const deleteOneTask = (id, auth) => async dispatch => {
 };
 
 
-export const deleteTask = (id, auth) => async dispatch => {
+export const deleteTask = (id) => async dispatch => {
 
 
     await axios.delete(`http://localhost:9494/menu/${id}`, {"headers": foHeaders()});

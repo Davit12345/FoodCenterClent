@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
-import {getAllProducts} from "../../actions/projectTaskActions";
+import {getAllProducts} from "../../actions/ProductsActions";
 import FoodItem from './items/foodItem'
 import {Link} from "react-router-dom";
 

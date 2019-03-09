@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import FoodItem from "./items/ChooseItem";
 import {connect} from "react-redux";
-import {getChoose, buyProduct} from "../../actions/projectTaskActions";
+import {getChoose, buyProduct} from "../../actions/ProductsActions";
 import PropTypes from "prop-types";
 import Cookies from 'universal-cookie'
 class Choose extends Component {
@@ -12,14 +12,15 @@ class Choose extends Component {
         if ( cookies.get('token') === null) {
             this.props.history.push('/signIn')
         }
-        this.props.getChoose(this.props.auth);
+        this.props.getChoose();
     }
 
 
 
     onBuyClick(e) {
         e.preventDefault();
-        this.props.buyProduct(this.props.auth);
+        this.props.history.push('/haveTableOrHome')
+        this.props.buyProduct();
     }
     render() {
         const {choose} = this.props.choose;
@@ -86,4 +87,4 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
     {buyProduct, getChoose}
-)(Choose);
+)(Choose)

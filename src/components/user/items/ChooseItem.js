@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {deleteOneTask} from '../../../actions/projectTaskActions'
+import {deleteOneTask} from '../../../actions/ProductsActions'
 import PropTypes from "prop-types";
 
 class ChooseItem extends Component {
