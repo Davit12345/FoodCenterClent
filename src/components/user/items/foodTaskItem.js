@@ -66,11 +66,11 @@ import  {addItem} from '../../../actions/ProductsActions'
                                value={this.state.quantity}
                                onChange={this.onChange}
                                name="quantity"
-                               placeholder="quantity"
+                               placeholder="count"
                         />
                     </div>
 
-                    <input type="submit" className="btn btn-primary btn-block mt-4"/>
+                    <input type="submit" value='add' className="btn btn-primary btn-block mt-4"/>
 
                 </div>
                 </form >

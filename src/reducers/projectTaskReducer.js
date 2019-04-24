@@ -11,6 +11,7 @@ export default function(state = initialState, action) {
                 ...state,
                 project_tasks: action.payload
             };
+
         case DELETE_MENU_TASK:
             return {
                 ...state,
@@ -23,4 +24,4 @@ export default function(state = initialState, action) {
             return state;
 
     }
-}
+};

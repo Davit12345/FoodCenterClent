@@ -67,47 +67,47 @@ class Service extends Component {
             }
 
             return (
-                <div  clssName="product" style={{ marginLeft:'10%',width: '80%',textAlign: 'center'}} >
-                <div className='first'>
-                    <div id="Item">
-                        <h3> Dish</h3>
-                        <Item item={Dish}/>
-                    </div>
+                <div  clssName="products">
+                    <div clssName='service'style={{ background:'yellow',width: '50px',height: '1800px',marginBlockStart:'1%',float:'left'}}>   </div>
+                    <div clssName='service'style={{ background:'green',width: '50px',height: '1800px',marginBlockStart:'1%',float:'right'}}>   </div>
 
-                    <div id="Item">
-                        <h3> Drinks</h3>
-                        <Item item={Drinks}/>
-                    </div>
-                    <div  id="Item">
-                        <h3> Salad</h3>
-                        <Item item={Salad}/>
-                    </div>
+                    <div  clssName="product" style={{ marginLeft:'10%',width: '80%',textAlign: 'center'}} >
 
-                    <div id="Item">
-                        <h3> Sweets</h3>
-                        <Item item={Sweets}/>
-                    </div>
+                    <div className='first'>
 
-                    <div id="Item">
-                        <h3> Deserts</h3>
-                        <Item item={Deserts}/>
-                    </div>
 
-                    <div id="Item">
-                        <h3> Other</h3>
-                        <Item item={Other}/>
-                    </div>
+
+
+                    {teg('dish',Dish)}
+
+
+                    {teg('drinks',Drinks)}
+
+                    {teg('salad',Salad)}
+                    {teg('sweets',Sweets)}
+
+
+                    {teg('deserts',Deserts)}
+
+                    {teg('other',Other)}
+
+                    </div></div>
                 </div>
-
-                </div>
-
             );
         }
 
 
     }
 }
-
+function teg( title,name){
+    if(name.length>0)
+    {
+        return (<div id="Item">
+            <h3>{title}</h3>
+            <Item item={name}/>
+        </div>)
+    }
+}
 
 Service.propTypes = {
     getAllProducts: PropTypes.func.isRequired,

@@ -52,7 +52,7 @@ class AddFood extends Component {
 
                 <div className="container">
 
-                    <h1>add food page </h1>
+                    <h1>add food  </h1>
                     <div className="addProjectTask">
                         <div className="container">
                             <div className="row">
@@ -60,7 +60,7 @@ class AddFood extends Component {
 
 
                                     <h4 className="display-4 text-center">
-                                        Add /Update Project Task
+                                        Add  Product
                                     </h4>
 
                                     <form onSubmit={this.onSubmit}>
@@ -82,10 +82,10 @@ class AddFood extends Component {
                                             >
                                                 <option value="">Select Items</option>
                                                 <option value="Dish">Dish</option>
-                                                <option value="Drinks">Drinks</option>
+                                                <option value="Drinks">Drink</option>
                                                 <option value="Salad">Salad</option>
-                                                <option value="Sweets">Sweets</option>
-                                                <option value="Deserts">Deserts</option>
+                                                <option value="Sweets">Sweet</option>
+                                                <option value="Deserts">Desert</option>
                                                 <option value="Other">Other</option>
                                             </select>
                                         </div>

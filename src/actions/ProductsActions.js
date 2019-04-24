@@ -7,7 +7,9 @@ import {
     GET_CHOOSE,
     DELETE_ONE_TASK,
     DELETE_MENU_TASK,
-    SUCCESS_BUY_PRODUCT
+    SUCCESS_BUY_PRODUCT,
+    GET_ORDERS_TASKS
+
 } from "./types";
 
 
@@ -23,6 +25,7 @@ export const getAllProducts = () => async dispatch => {
     });
 };
 
+
 function foHeaders() {
 
     const cookies = new Cookies();
@@ -33,7 +36,14 @@ function foHeaders() {
     };
     return headers;
 }
+export const getUnSendOrders = () => async dispatch => {
+    const res = await axios.get("http://localhost:9494/unSendOrders",{"headers": foHeaders()});
+    dispatch({
+        type: GET_ORDERS_TASKS,
+        payload: res.data
 
+    });
+};
 export const addAddress = (address) => async dispatch => {
 
 

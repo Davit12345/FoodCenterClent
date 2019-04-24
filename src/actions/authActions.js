@@ -64,7 +64,8 @@ export const LoginIn = (login, history) => async dispatch => {
 
         const role = await axios.get("http://localhost:9494/role", {"headers": headersForRole});
 
-        var user_role = null;
+        var user_role = "ROLE_ADMIN";
+        console.log(role.data.length)
         if (role.data.length === 3) {
             user_role = 'ROLE_ADMIN';
         } else if (role.data.length === 2) {

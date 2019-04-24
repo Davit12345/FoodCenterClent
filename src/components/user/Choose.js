@@ -61,9 +61,9 @@ class Choose extends Component {
                         {tasks}
                         </tbody>
                     </table>
-                    <h3> common price {commonPrice}</h3>
+                    <h3>  The total amount is: {commonPrice} </h3>
                     {/*<button onClick={this.onBuyClick} className="btn btn-danger">buy</button>*/}
-                    <button onClick={this.onBuyClick.bind(this)} className="btn btn-danger">buy</button>
+                    <button onClick={this.onBuyClick.bind(this)} className="btn btn-success">buy</button>
 
 
                 </div>

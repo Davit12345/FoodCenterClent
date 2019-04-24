@@ -9,6 +9,7 @@ class ChooseItem extends Component {
 
         this.props.deleteOneTask(id)
 }
+
     componentWillReceiveProps(nextProps) {
         if (nextProps) {
             this.setState({choose :nextProps.choose});
@@ -25,6 +26,9 @@ class ChooseItem extends Component {
                 <td>{choose.menu.price}</td>
                 <td>
                     <button onClick={this.onDeleteClick.bind(this, choose.id)}  className="btn btn-danger">Delete</button>
+                </td>
+                <td>
+                    <button onClick={this.onDeleteClick.bind(this, choose.id)}  className="btn btn-success">Update</button>
                 </td>
             </tr>
         );

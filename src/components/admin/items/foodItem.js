@@ -26,6 +26,9 @@ class FoodItem extends Component {
                 <td>
                     <button onClick={this.onDeleteClick.bind(this, project_task.id)}  className="btn btn-danger">Delete</button>
                 </td>
+                <td>
+                    <button onClick={this.onDeleteClick.bind(this, project_task.id)}  className="btn btn-success">Update</button>
+                </td>
             </tr>
         );
     }

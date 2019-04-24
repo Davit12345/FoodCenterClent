@@ -47,7 +47,7 @@ class Verify extends Component {
 
                 <div className="container">
 
-                    <h1>Sign Up</h1>
+                    <h1>Verify</h1>
                     <div className="addUSer">
                         <div className="container">
                             <div className="row">
@@ -65,7 +65,7 @@ class Verify extends Component {
                                                    placeholder="Email"
                                             />
                                         </div>
-                                        <h4>See in Email</h4>
+                                        <h4>See the code in Email</h4>
 
                                         <div className="form-group">
                                             <input type="password" className="form-control form-control-lg"
